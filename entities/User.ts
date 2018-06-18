@@ -1,18 +1,24 @@
-import { Entity, Column, PrimaryGeneratedColumn, OneToOne, JoinColumn } from "typeorm";
-import { Balance } from './Balance';
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Balance } from "./Balance";
 
+// tslint:disable
 @Entity()
 export class User {
-    @PrimaryGeneratedColumn()
-    id!: number;
+  @PrimaryGeneratedColumn()
+  id!: number;
 
-    @Column("varchar", {
-        length: 50
-    })
-    name!: string;
+  @Column(
+    "varchar",
+    { length: 50 }
+  )
+  name!: string;
 
-    @OneToOne(type => Balance, balance => balance.user, { eager: true, cascade: true })
-    @JoinColumn()
-    balance!: Balance;
+  @OneToOne(
+    type => Balance,
+    balance => balance.user,
+    { eager: true, cascade: true }
+  )
+  @JoinColumn()
+  balance!: Balance;
 
 }

@@ -1,17 +1,17 @@
-import { ApiServer } from './api-server';
+import { ApiServer } from "./api-server";
 
 export const start = (): Promise<void> => {
-    return new Promise<void>((resolve, reject) => {
-        const apiServer = new ApiServer();
-        apiServer.start()
-            .then(resolve)
-            .catch(reject);
+  return new Promise<void>((resolve, reject) => {
+    const apiServer = new ApiServer();
+    apiServer.start()
+      .then(resolve)
+      .catch(reject);
 
-        const graceful = () => {
-            apiServer.stop().then(() => process.exit(0));
-        };
+    const graceful = () => {
+      apiServer.stop().then(() => process.exit(0));
+    };
 
-        process.on('SIGTERM', graceful);
-        process.on('SIGINT', graceful);
-    });
+    process.on("SIGTERM", graceful);
+    process.on("SIGINT", graceful);
+  });
 };
