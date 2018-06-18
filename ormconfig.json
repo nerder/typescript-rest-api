@@ -8,9 +8,9 @@
    "synchronize": true,
    "logging": false,
    "entities": [
-      "./entities/*.ts"
+      "./src/entities/*.ts"
    ],
    "cli": {
-      "entitiesDir": "./entities"
+      "entitiesDir": "./src/entities"
    }
 }
