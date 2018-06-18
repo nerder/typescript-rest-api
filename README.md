@@ -9,7 +9,7 @@ The used technology	will be NodeJS with typescript, i would like to learn a litt
 1. I’m aware of the fact that all the APIs of `BalanceController` should run only under authentication, but i didn’t have the time to implement so. 
 2. Tests. I got short on time, i’ll try to implement them today eventually. At least of the services.
 3. Using generics to avoid code repetition, i try this approach but a typescript bug with PartialGenerics let me waste a lot of time until, after 3 hours of workarounds, i finally opt for the code repetition. The refactor should be easy once the the bug is fixed. (ref in the code)
-4. Project strcture. I probably should move the source of the app into a sub directory, to make it cleaner. I realize it late, i'll try to move it without messsing to much up.
+4. ~Project structure. I probably should move the source of the app into a sub directory, to make it cleaner. I realize it late, i'll try to move it without messsing to much up.~
 5. ~Missing linter, i should add at least a basic linter for ts, but the fact that vscode already use one built in, makes me forget about it. I'll do eventually today.~
 
 
