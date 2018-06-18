@@ -1,4 +1,4 @@
-# Verse Exercise
+# Typescript REST API
 ## Technology
 The used technology	will be NodeJS with typescript, i would like to learn a little bit more about typescript and its ecosystem so i use this test as an excuse to try out this technology, no specific technical reasons. To storing data i’ll use a RDBMS mainly due the transactional nature of the data model plus the fact that the domain itself (money) lead me to sacrifice performance over data consistency.  
 
