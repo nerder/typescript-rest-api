@@ -1,36 +1,36 @@
-import { BaseRepository } from "./BaseRepository";
+import { AutoWired, Singleton } from "typescript-ioc";
 import { User } from "../entities/User";
-import { Singleton, AutoWired } from "typescript-ioc";
-import { ReadInterface } from "./interfaces/ReadInterface";
-import { WriteInterface } from "./interfaces/WriteInterface";
+import { BaseRepository } from "./BaseRepository";
+import { IRead } from "./interfaces/IRead";
+import { IWrite } from "./interfaces/IWrite";
 
 @Singleton
 @AutoWired
-export class UserRepository extends BaseRepository​​<User> implements ReadInterface<User>, WriteInterface<User> {
-    constructor() {
-        super('User');
-    }
-    async save(item: User): Promise<User> {
-        return await this._repository.save(item);
-    }
+export class UserRepository extends BaseRepository<User> implements IRead<User>, IWrite<User> {
+  constructor() {
+    super("User");
+  }
+  public async save(item: User): Promise<User> {
+    return await this._repository.save(item);
+  }
 
-    async find(item: User): Promise<User[]> {
-        return await this._repository.find(item);
-    }
+  public async find(item: User): Promise<User[]> {
+    return await this._repository.find(item);
+  }
 
-    async findOne(id: string): Promise<User> {
-        return await this._repository.findOneOrFail(id);
-    }
+  public async findOne(id: string): Promise<User> {
+    return await this._repository.findOneOrFail(id);
+  }
 
-    async create(item: User): Promise<boolean> {
-        return await !!this._repository.insert(item);
-    }
+  public async create(item: User): Promise<boolean> {
+    return await !!this._repository.insert(item);
+  }
 
-    async update(id: string, item: User): Promise<boolean> {
-        return await this.update(id, item);
-    }
+  public async update(id: string, item: User): Promise<boolean> {
+    return await this.update(id, item);
+  }
 
-    async delete(id: string): Promise<boolean> {
-        return true;
-    }
+  public async delete(id: string): Promise<boolean> {
+    return true;
+  }
 }

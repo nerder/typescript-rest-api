@@ -1,7 +1,7 @@
-import { UserController } from "./UserController";
 import { BalanceController } from "./BalanceController";
+import { UserController } from "./UserController";
 
 export default [
-    UserController,
-    BalanceController
-]
+  BalanceController,
+  UserController,
+];
