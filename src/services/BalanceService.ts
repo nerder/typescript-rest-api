@@ -8,7 +8,6 @@ export class BalanceService {
 
   @Inject
   private repository!: BalanceRepository;
-
   @Inject
   private userRepository!: UserRepository;
 

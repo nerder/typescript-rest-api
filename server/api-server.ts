@@ -2,7 +2,7 @@ import cors from "cors";
 import express from "express";
 import http from "http";
 import { Server } from "typescript-rest";
-import controllers from "../controllers";
+import controllers from "../src/controllers";
 
 export class ApiServer {
 
